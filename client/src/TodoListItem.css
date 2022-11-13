@@ -1,0 +1,20 @@
+.todolistitem {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  width: 90%;
+  border-radius: 5px;
+  background-color: #37474F;
+}
+.todolistitem span{
+  color: greenyellow;
+
+}
+.todolistitem-body{
+display: flex;
+gap: 5px;
+}
+.todolistitem-controls{
+    display: flex;
+    gap: 6px;
+}
