@@ -8,7 +8,7 @@ const App = () => {
   let [currentTitle, setCurrentTitle] = useState("");
 
   const deleteTodo = (id) => {
-    axios.delete("http://localhost:3001/delete/" + id).then((res) => {
+    axios.delete("http://localhost:3001/todos/" + id).then((res) => {
       if (res.status == 200) {
         toast.success("Todo successfully deleted");
         const updatedTodos = todos.filter((todo) => todo.id !== id);
@@ -20,7 +20,7 @@ const App = () => {
   };
   const addTodo = (title) => {
     axios
-      .post("http://localhost:3001/addTodo", {
+      .post("http://localhost:3001/todos/", {
         title,
       })
       .then((res) => {
@@ -29,7 +29,7 @@ const App = () => {
           setTodos([
             ...todos,
             {
-              id: todos.at(-1).id + 1,
+              id: todos.at(-1)?.id + 1 || 1,
               title,
               completed: false,
             },
@@ -41,7 +41,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3001/getAllTodos").then(({ data }) => {
+    axios.get("http://localhost:3001/todos/all").then(({ data }) => {
       setTodos(data);
     });
   }, []);

@@ -13,11 +13,9 @@ const TodoListItem = ({ id, title, deleteTodo }) => {
           type="checkbox"
           onChange={() => {
             let updatedCompletedState = completed ? false : true;
-            axios
-              .put("http://localhost:3001/update/completed/" + id)
-              .then((res) => {
-                console.log(res);
-              });
+            axios.put("http://localhost:3001/todos" + id).then((res) => {
+              console.log(res);
+            });
             setCompleted(updatedCompletedState);
           }}
         />
@@ -31,9 +29,11 @@ const TodoListItem = ({ id, title, deleteTodo }) => {
         </span>
       </div>
       <div className="todolistitem-controls">
-        <EditOutlined />
+        <EditOutlined style={{ color: "white" }} />
         <DeleteOutlined
+          style={{ color: "white" }}
           onClick={() => {
+            console.log(id);
             deleteTodo(id);
           }}
         ></DeleteOutlined>

@@ -17,7 +17,6 @@ body {
 .todo-container {
   width: 95%;
   max-width: 600px;
-  
 }
 
 .todo-container-header {
@@ -37,7 +36,7 @@ body {
 .todo-container-header button {
   border: none;
   outline: none;
-  padding: 5px 12px;
+  padding: 6px 12px;
   background-color: darkorchid;
 
   border-radius: 5px;
@@ -48,7 +47,7 @@ body {
   outline: none;
   border: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 6px;
 }
 .todo-container-header-title {
   font-size: 1.6rem;
@@ -58,6 +57,7 @@ body {
   padding: 15px 0px;
   align-items: center;
   border-radius: 5px;
+  color: greenyellow;
   display: flex;
   gap: 5px;
   flex-direction: column;
