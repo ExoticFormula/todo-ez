@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  width: 90%;
+  width: 85%;
   border-radius: 5px;
   background-color: #37474f;
 }
@@ -13,6 +13,19 @@
   display: flex;
   gap: 5px;
 }
+
+.todolistitem-body input {
+  outline: none;
+  border: none;
+  color: white;
+
+  background-color: transparent;
+}
+
+.todolistitem-body input::placeholder {
+  color: white;
+}
+
 .todolistitem-controls {
   display: flex;
   gap: 6px;

@@ -1,18 +1,24 @@
+//imports
 const express = require("express");
 const app = express();
 const cors = require("cors");
-app.use(cors());
 require("dotenv").config();
-app.use(express.json());
+const connection = require("./dbConfig");
 const todoRoutes = require("./routes/todoRoutes.js");
-app.use("/", todoRoutes);
-const sqlconnection = require("./dbConfig");
 
-sqlconnection.connect((err) => {
+app.use(cors());
+app.use(express.json());
+
+//todo routes
+app.use("/", todoRoutes);
+
+//connecting to local mysql db
+connection.connect((err) => {
   if (err) return console.error("error: " + err.message);
   console.log("connected to mysql");
 });
 
+//starting server
 app.listen(3001, () => {
   console.log("server running on port " + 3000);
 });
